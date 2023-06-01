@@ -5,7 +5,12 @@ import "./App.css";
 import { Post } from "../src/components/Post";
 
 function App() {
-  return <Post />;
+  return (
+    <>
+      <Post author="Misito" body="React.js is awesome!" />
+      <Post author="Luz Stella" body="Amazing!" />
+    </>
+  );
 }
 
 export default App;
