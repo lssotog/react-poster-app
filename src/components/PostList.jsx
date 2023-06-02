@@ -5,8 +5,13 @@ import { Post } from "./Post";
 import { Modal } from "./Modal";
 
 export const PostList = () => {
+  const [modalIsVisible, setModalIsVisible] = useState(true);
   const [enteredBody, setEnteredBody] = useState("React.js is great!");
   const [enteredAuthor, setEnteredAuthor] = useState("Misito");
+
+  function hideModalHandler() {
+    setModalIsVisible(false);
+  }
 
   function bodyChangeHandler(event) {
     setEnteredBody(event.target.value);
@@ -18,12 +23,16 @@ export const PostList = () => {
 
   return (
     <>
-      <Modal>
-        <NewPost
-          onBodyChange={bodyChangeHandler}
-          onAuthorChange={AuthorChangeHandler}
-        />
-      </Modal>
+      {modalIsVisible ? (
+        <Modal onClose={hideModalHandler}>
+          <NewPost
+            onBodyChange={bodyChangeHandler}
+            onAuthorChange={AuthorChangeHandler}
+          />
+        </Modal>
+      ) : (
+        false
+      )}
 
       <ul className={classes.posts}>
         <Post author={enteredAuthor} body={enteredBody} />
