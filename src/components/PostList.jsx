@@ -21,20 +21,16 @@ export const PostList = () => {
     setEnteredAuthor(event.target.value);
   }
 
-  let modalContent;
-  if (modalIsVisible) {
-    modalContent = (
-      <Modal onClose={hideModalHandler}>
-        <NewPost
-          onBodyChange={bodyChangeHandler}
-          onAuthorChange={AuthorChangeHandler}
-        />
-      </Modal>
-    );
-  }
   return (
     <>
-      {modalContent}
+      {modalIsVisible && (
+        <Modal onClose={hideModalHandler}>
+          <NewPost
+            onBodyChange={bodyChangeHandler}
+            onAuthorChange={AuthorChangeHandler}
+          />
+        </Modal>
+      )}
       <ul className={classes.posts}>
         <Post author={enteredAuthor} body={enteredBody} />
         <Post author="Luz Stella" body="Amazing!" />
