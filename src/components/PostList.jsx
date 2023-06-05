@@ -23,6 +23,7 @@ export const PostList = ({ isPosting, onStopPosting }) => {
           <NewPost
             onBodyChange={bodyChangeHandler}
             onAuthorChange={AuthorChangeHandler}
+            onCancel={onStopPosting}
           />
         </Modal>
       )}
