@@ -17,3 +17,7 @@ Como convención es bueno utilizar el prefijo on cuando se quiere indicar en el 
 e.g.
 
 `<Modal onClose={onStopPosting}>`
+
+##### Adding a Backend to the React SPA
+
+Es importante poner a correr el backend para que se pueda conectar con el frontend.
