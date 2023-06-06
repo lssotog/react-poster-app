@@ -21,3 +21,7 @@ e.g.
 ##### Adding a Backend to the React SPA
 
 Es importante poner a correr el backend para que se pueda conectar con el frontend.
+
+Y cuando se hace una solicitud POST se debe ir al BE y en el archivo posts.json se puede ver la información que se envío al BE.
+
+[Respuesta POST](./src/assets/respuesta-post.jpg)
